@@ -16,9 +16,6 @@ Just follow these steps:
 - In the terminal, ```run dotnet restore```;
 - In Visual Studio, go to Build -> Build Solution, then find the bin folder and run the .exe file.
 
-# TODO
-- Build CI
-
 
 # Finally
 
