@@ -94,5 +94,53 @@ namespace OpenOSD.Properties {
                 this["CpuTempDiff"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int GpuTargetTemp {
+            get {
+                return ((int)(this["GpuTargetTemp"]));
+            }
+            set {
+                this["GpuTargetTemp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int GpuTargetClock {
+            get {
+                return ((int)(this["GpuTargetClock"]));
+            }
+            set {
+                this["GpuTargetClock"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string GpuTargetClockColor {
+            get {
+                return ((string)(this["GpuTargetClockColor"]));
+            }
+            set {
+                this["GpuTargetClockColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string GpuTargetTempColor {
+            get {
+                return ((string)(this["GpuTargetTempColor"]));
+            }
+            set {
+                this["GpuTargetTempColor"] = value;
+            }
+        }
     }
 }

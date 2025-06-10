@@ -148,6 +148,9 @@ namespace OpenOSD
             PgGpuClock.Value = Math.Min(PgGpuClock.Maximum, Math.Max(PgGpuClock.Minimum, (int)Math.Round(this.gpu.Clock)));
             LblGpuClockValue.Text = $"{this.gpu.Clock:F0} MHz";
 
+            this.PgGpuClock.Style = this.gpu.Clock >= Properties.Settings.Default.GpuTargetClock ? this.HandleStyleFromString(Properties.Settings.Default.GpuTargetClockColor) : MetroColorStyle.Silver;
+            this.PgGpuTemp.Style = this.gpu.Temperature >= Properties.Settings.Default.GpuTargetTemp ? this.HandleStyleFromString(Properties.Settings.Default.GpuTargetTempColor) : MetroColorStyle.Green;
+
             PgGpuTemp.Value = Math.Min(PgGpuTemp.Maximum, Math.Max(PgGpuTemp.Minimum, (int)Math.Round(this.gpu.Temperature)));
             LblGpuTempValue.Text = $"{this.gpu.Temperature:0.#} ºC";            
 

@@ -16,14 +16,29 @@ namespace OpenOSD.Forms
         {
             this.LoadLogoPath();
 
+            //Cpu Params
             this.CbCpuTargetClock.DataSource = Enum.GetValues(typeof(MetroColorStyle));
             this.CbCpuTempTarget.DataSource = Enum.GetValues(typeof (MetroColorStyle));
-            this.TxtCpuTargetTemp.Text = Properties.Settings.Default.CpuTargetTemp.ToString() ?? "";
-            this.TxtCpuTargetClock.Text = Properties.Settings.Default.CpuTargetClock.ToString() ?? "";
-            this.TxtCpuTempDiff.Text = Properties.Settings.Default.CpuTempDiff.ToString() ?? "";
-
+            this.SlCpuTargetTemp.Value = Properties.Settings.Default.CpuTargetTemp;
+            this.LblCpuTargetTempValue.Text = $"{Properties.Settings.Default.CpuTargetTemp} ºC" ?? "0";
+            this.SlCpuTargetClock.Value = Properties.Settings.Default.CpuTargetClock;
+            this.LblCpuTargetClockValue.Text = $"{Properties.Settings.Default.CpuTargetClock} MHz" ?? "0";
+            this.SlCpuTempDiff.Value = Properties.Settings.Default.CpuTempDiff;
+            this.LblCpuTempDiffValue.Text = $"{Properties.Settings.Default.CpuTempDiff}";
             this.GetValueFromEnum(this.CbCpuTempTarget, Properties.Settings.Default.CpuTargetTempColor);
             this.GetValueFromEnum(this.CbCpuTargetClock, Properties.Settings.Default.CpuTargetClockColor);
+
+            //Gpu Params
+
+            this.CbGpuTargetClock.DataSource = Enum.GetValues(typeof(MetroColorStyle));
+            this.CbGpuTargetTemp.DataSource = Enum.GetValues(typeof(MetroColorStyle));
+            this.SlGpuTargetTemp.Value = Properties.Settings.Default.GpuTargetTemp;
+            this.LblGpuTargetTempValue.Text = Properties.Settings.Default.GpuTargetTemp.ToString() ?? "0";
+            this.SlGpuTargetClock.Value = Properties.Settings.Default.GpuTargetClock;
+            this.LblGpuTargetClockValue.Text = Properties.Settings.Default.GpuTargetClock.ToString() ?? "";
+            this.GetValueFromEnum(this.CbGpuTargetTemp, Properties.Settings.Default.GpuTargetTempColor);
+            this.GetValueFromEnum(this.CbGpuTargetClock, Properties.Settings.Default.GpuTargetTempColor);
+
         }
 
         private void LoadLogoPath()
@@ -53,11 +68,20 @@ namespace OpenOSD.Forms
             {
 
                 Properties.Settings.Default.LogoPath = TxtLogo.Text;
-                Properties.Settings.Default.CpuTargetClock = Convert.ToInt32(this.TxtCpuTargetClock.Text);
-                Properties.Settings.Default.CpuTargetTemp = Convert.ToInt32(this.TxtCpuTargetTemp.Text);
+
+                //CPU Params
+                Properties.Settings.Default.CpuTargetClock = this.SlCpuTargetClock.Value;
+                Properties.Settings.Default.CpuTargetTemp = this.SlCpuTargetTemp.Value;
                 Properties.Settings.Default.CpuTargetClockColor = this.CbCpuTargetClock.SelectedIndex.ToString();
                 Properties.Settings.Default.CpuTargetTempColor = this.CbCpuTempTarget.SelectedIndex.ToString();
-                Properties.Settings.Default.CpuTempDiff = Convert.ToInt32(this.TxtCpuTempDiff.Text);
+                Properties.Settings.Default.CpuTempDiff = this.SlCpuTempDiff.Value;
+
+                //GPU Params
+                Properties.Settings.Default.GpuTargetTemp = this.SlGpuTargetTemp.Value;
+                Properties.Settings.Default.GpuTargetClock = this.SlGpuTargetClock.Value;
+                Properties.Settings.Default.GpuTargetClockColor = this.CbGpuTargetClock.SelectedIndex.ToString();
+                Properties.Settings.Default.GpuTargetTempColor = this.CbGpuTargetTemp.SelectedIndex.ToString();
+
                 Properties.Settings.Default.Save();
 
                 MessageBox.Show("As configurações foram salvas com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -117,6 +141,31 @@ namespace OpenOSD.Forms
             {
                 e.Handled = true;
             }
+        }
+
+        private void SlCpuTargetTemp_ValueChanged(object sender, EventArgs e)
+        {
+            this.LblCpuTargetTempValue.Text = $"{this.SlCpuTargetTemp.Value} ºC";
+        }
+
+        private void SlCpuTargetClock_ValueChanged(object sender, EventArgs e)
+        {
+            this.LblCpuTargetClockValue.Text = $"{this.SlCpuTargetClock.Value} MHz";
+        }
+
+        private void SlCpuTempDiff_ValueChanged(object sender, EventArgs e)
+        {
+            this.LblCpuTempDiffValue.Text = this.SlCpuTempDiff.Value.ToString();
+        }
+
+        private void SlGpuTargetTemp_ValueChanged(object sender, EventArgs e)
+        {
+            this.LblGpuTargetTempValue.Text = SlGpuTargetTemp.Value.ToString();
+        }
+
+        private void SlGpuTargetClock_ValueChanged(object sender, EventArgs e)
+        {
+            this.LblGpuTargetClockValue.Text = SlGpuTargetClock.Value.ToString();
         }
     }
 }
