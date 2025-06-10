@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36202.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenOSD", "OpenOSD\OpenOSD.csproj", "{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3169724B-BCC8-4056-BBD1-6B56739E3ED1}
+	EndGlobalSection
+EndGlobal

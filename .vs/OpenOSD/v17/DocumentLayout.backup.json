@@ -1,0 +1,120 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "X:\\Projetos\\OpenOSD\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}|OpenOSD\\OpenOSD.csproj|x:\\projetos\\openosd\\openosd\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}|OpenOSD\\OpenOSD.csproj|solutionrelative:openosd\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}|OpenOSD\\OpenOSD.csproj|x:\\projetos\\openosd\\openosd\\service\\lanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}|OpenOSD\\OpenOSD.csproj|solutionrelative:openosd\\service\\lanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}|OpenOSD\\OpenOSD.csproj|x:\\projetos\\openosd\\openosd\\service\\cpuservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}|OpenOSD\\OpenOSD.csproj|solutionrelative:openosd\\service\\cpuservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}|OpenOSD\\OpenOSD.csproj|x:\\projetos\\openosd\\openosd\\service\\gpuservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}|OpenOSD\\OpenOSD.csproj|solutionrelative:openosd\\service\\gpuservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}|OpenOSD\\OpenOSD.csproj|x:\\projetos\\openosd\\openosd\\forms\\frmconfigs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}|OpenOSD\\OpenOSD.csproj|solutionrelative:openosd\\forms\\frmconfigs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}|OpenOSD\\OpenOSD.csproj|x:\\projetos\\openosd\\openosd\\forms\\frmsensors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B3675665-C29F-4ED8-BBDF-7FDFFDCE0700}|OpenOSD\\OpenOSD.csproj|solutionrelative:openosd\\forms\\frmsensors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "X:\\Projetos\\OpenOSD\\OpenOSD\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "OpenOSD\\Properties\\Resources.resx",
+              "ToolTip": "X:\\Projetos\\OpenOSD\\OpenOSD\\Properties\\Resources.resx",
+              "RelativeToolTip": "OpenOSD\\Properties\\Resources.resx",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAowHgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-06-10T15:48:27.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LanService.cs",
+              "DocumentMoniker": "X:\\Projetos\\OpenOSD\\OpenOSD\\Service\\LanService.cs",
+              "RelativeDocumentMoniker": "OpenOSD\\Service\\LanService.cs",
+              "ToolTip": "X:\\Projetos\\OpenOSD\\OpenOSD\\Service\\LanService.cs",
+              "RelativeToolTip": "OpenOSD\\Service\\LanService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T15:37:08.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CpuService.cs",
+              "DocumentMoniker": "X:\\Projetos\\OpenOSD\\OpenOSD\\Service\\CpuService.cs",
+              "RelativeDocumentMoniker": "OpenOSD\\Service\\CpuService.cs",
+              "ToolTip": "X:\\Projetos\\OpenOSD\\OpenOSD\\Service\\CpuService.cs",
+              "RelativeToolTip": "OpenOSD\\Service\\CpuService.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAiwHwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T15:17:26.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FrmSensors.cs [Design]",
+              "DocumentMoniker": "X:\\Projetos\\OpenOSD\\OpenOSD\\Forms\\FrmSensors.cs",
+              "RelativeDocumentMoniker": "OpenOSD\\Forms\\FrmSensors.cs",
+              "ToolTip": "X:\\Projetos\\OpenOSD\\OpenOSD\\Forms\\FrmSensors.cs [Design]",
+              "RelativeToolTip": "OpenOSD\\Forms\\FrmSensors.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T15:11:38.897Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FrmConfigs.cs [Design]",
+              "DocumentMoniker": "X:\\Projetos\\OpenOSD\\OpenOSD\\Forms\\FrmConfigs.cs",
+              "RelativeDocumentMoniker": "OpenOSD\\Forms\\FrmConfigs.cs",
+              "ToolTip": "X:\\Projetos\\OpenOSD\\OpenOSD\\Forms\\FrmConfigs.cs [Design]",
+              "RelativeToolTip": "OpenOSD\\Forms\\FrmConfigs.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T15:11:36.951Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GpuService.cs",
+              "DocumentMoniker": "X:\\Projetos\\OpenOSD\\OpenOSD\\Service\\GpuService.cs",
+              "RelativeDocumentMoniker": "OpenOSD\\Service\\GpuService.cs",
+              "ToolTip": "X:\\Projetos\\OpenOSD\\OpenOSD\\Service\\GpuService.cs",
+              "RelativeToolTip": "OpenOSD\\Service\\GpuService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T15:10:49.822Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
