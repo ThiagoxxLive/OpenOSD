@@ -32,4 +32,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: OpenOSD
-        path: OpenOSD.zip
+        path: OpenOSD/bin/Release/*
