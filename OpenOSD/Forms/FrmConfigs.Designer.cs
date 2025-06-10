@@ -102,7 +102,7 @@
             // LblCpuTempTarget
             // 
             this.LblCpuTempTarget.AutoSize = true;
-            this.LblCpuTempTarget.Location = new System.Drawing.Point(2, 19);
+            this.LblCpuTempTarget.Location = new System.Drawing.Point(5, 19);
             this.LblCpuTempTarget.Name = "LblCpuTempTarget";
             this.LblCpuTempTarget.Size = new System.Drawing.Size(114, 19);
             this.LblCpuTempTarget.Style = MetroFramework.MetroColorStyle.Black;
@@ -128,14 +128,14 @@
             this.GpCpu.ForeColor = System.Drawing.Color.Gray;
             this.GpCpu.Location = new System.Drawing.Point(23, 63);
             this.GpCpu.Name = "GpCpu";
-            this.GpCpu.Size = new System.Drawing.Size(269, 225);
+            this.GpCpu.Size = new System.Drawing.Size(283, 225);
             this.GpCpu.TabIndex = 7;
             this.GpCpu.TabStop = false;
             this.GpCpu.Text = "Parâmetros CPU";
             // 
             // TxtCpuTempDiff
             // 
-            this.TxtCpuTempDiff.Location = new System.Drawing.Point(8, 147);
+            this.TxtCpuTempDiff.Location = new System.Drawing.Point(11, 147);
             this.TxtCpuTempDiff.Name = "TxtCpuTempDiff";
             this.TxtCpuTempDiff.Size = new System.Drawing.Size(121, 23);
             this.TxtCpuTempDiff.TabIndex = 16;
@@ -145,7 +145,7 @@
             // LblCpuTempDiff
             // 
             this.LblCpuTempDiff.AutoSize = true;
-            this.LblCpuTempDiff.Location = new System.Drawing.Point(2, 125);
+            this.LblCpuTempDiff.Location = new System.Drawing.Point(5, 125);
             this.LblCpuTempDiff.Name = "LblCpuTempDiff";
             this.LblCpuTempDiff.Size = new System.Drawing.Size(99, 19);
             this.LblCpuTempDiff.Style = MetroFramework.MetroColorStyle.Black;
@@ -157,7 +157,7 @@
             // 
             // TxtCpuTargetClock
             // 
-            this.TxtCpuTargetClock.Location = new System.Drawing.Point(8, 92);
+            this.TxtCpuTargetClock.Location = new System.Drawing.Point(11, 92);
             this.TxtCpuTargetClock.Name = "TxtCpuTargetClock";
             this.TxtCpuTargetClock.Size = new System.Drawing.Size(121, 23);
             this.TxtCpuTargetClock.TabIndex = 14;
@@ -167,7 +167,7 @@
             // LblCpuTargetClock
             // 
             this.LblCpuTargetClock.AutoSize = true;
-            this.LblCpuTargetClock.Location = new System.Drawing.Point(2, 70);
+            this.LblCpuTargetClock.Location = new System.Drawing.Point(5, 70);
             this.LblCpuTargetClock.Name = "LblCpuTargetClock";
             this.LblCpuTargetClock.Size = new System.Drawing.Size(114, 19);
             this.LblCpuTargetClock.Style = MetroFramework.MetroColorStyle.Black;
@@ -179,7 +179,7 @@
             // LblCpuTempTargetColor
             // 
             this.LblCpuTempTargetColor.AutoSize = true;
-            this.LblCpuTempTargetColor.Location = new System.Drawing.Point(129, 16);
+            this.LblCpuTempTargetColor.Location = new System.Drawing.Point(132, 16);
             this.LblCpuTempTargetColor.Name = "LblCpuTempTargetColor";
             this.LblCpuTempTargetColor.Size = new System.Drawing.Size(35, 19);
             this.LblCpuTempTargetColor.Style = MetroFramework.MetroColorStyle.Black;
@@ -190,7 +190,7 @@
             // 
             // TxtCpuTargetTemp
             // 
-            this.TxtCpuTargetTemp.Location = new System.Drawing.Point(8, 41);
+            this.TxtCpuTargetTemp.Location = new System.Drawing.Point(11, 41);
             this.TxtCpuTargetTemp.Name = "TxtCpuTargetTemp";
             this.TxtCpuTargetTemp.Size = new System.Drawing.Size(121, 23);
             this.TxtCpuTargetTemp.TabIndex = 8;
@@ -202,7 +202,7 @@
             this.CbCpuTempTarget.FontSize = MetroFramework.MetroLinkSize.Small;
             this.CbCpuTempTarget.FormattingEnabled = true;
             this.CbCpuTempTarget.ItemHeight = 19;
-            this.CbCpuTempTarget.Location = new System.Drawing.Point(135, 39);
+            this.CbCpuTempTarget.Location = new System.Drawing.Point(138, 39);
             this.CbCpuTempTarget.Name = "CbCpuTempTarget";
             this.CbCpuTempTarget.Size = new System.Drawing.Size(121, 25);
             this.CbCpuTempTarget.TabIndex = 11;
@@ -213,7 +213,7 @@
             this.CbCpuTargetClock.FontSize = MetroFramework.MetroLinkSize.Small;
             this.CbCpuTargetClock.FormattingEnabled = true;
             this.CbCpuTargetClock.ItemHeight = 19;
-            this.CbCpuTargetClock.Location = new System.Drawing.Point(135, 90);
+            this.CbCpuTargetClock.Location = new System.Drawing.Point(138, 90);
             this.CbCpuTargetClock.Name = "CbCpuTargetClock";
             this.CbCpuTargetClock.Size = new System.Drawing.Size(121, 25);
             this.CbCpuTargetClock.TabIndex = 10;
@@ -222,7 +222,7 @@
             // LblCpuTargetClockColor
             // 
             this.LblCpuTargetClockColor.AutoSize = true;
-            this.LblCpuTargetClockColor.Location = new System.Drawing.Point(129, 68);
+            this.LblCpuTargetClockColor.Location = new System.Drawing.Point(132, 68);
             this.LblCpuTargetClockColor.Name = "LblCpuTargetClockColor";
             this.LblCpuTargetClockColor.Size = new System.Drawing.Size(35, 19);
             this.LblCpuTargetClockColor.Style = MetroFramework.MetroColorStyle.Black;

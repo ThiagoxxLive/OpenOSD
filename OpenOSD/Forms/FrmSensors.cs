@@ -102,8 +102,8 @@ namespace OpenOSD
         private void UpdateCpuControls(CpuService cpu, double cpuClock)
         {
 
-            this.LblMoboName.Text = this.cpu.MotherboardName;
-            this.LblCpuName.Text = this.cpu.Name;
+            this.TxtMoboName.Text = this.cpu.MotherboardName;
+            this.TxtCpuName.Text = this.cpu.Name;
 
             this.CpuSpinner.Value = this.cpu.Usage;
 
@@ -141,7 +141,7 @@ namespace OpenOSD
 
         private void UpdateGpuControls(GpuService gpu)
         {
-            LblGpuName.Text = this.gpu.Name;
+            TxtGpuName.Text = this.gpu.Name;
 
             GpuSpinner.Value = this.gpu.Usage;
 

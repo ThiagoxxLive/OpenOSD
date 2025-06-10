@@ -53,17 +53,13 @@ namespace OpenOSD.Entity
         private float GetVcoreValue(Computer computer)
         {
             var Hardwares = computer.Hardware.Where(h => h.HardwareType == HardwareType.Motherboard).ToArray();
-            string[] Sensors = new[] { "vcore" };
-
-            return GetValues(Hardwares, SensorType.Voltage, Sensors);
+            return GetValues(Hardwares, SensorType.Voltage, new[] { "vcore" });
         }
 
         private float GetPackageTemperature(Computer computer)
         {
             var Hardwares = computer.Hardware.Where(h => h.HardwareType == HardwareType.Cpu).ToArray();
-            string[] Sensors = new[] { "package", "ccd1", "tdie" };
-
-            return GetValues(Hardwares, SensorType.Temperature, Sensors, subtractCpuTempDiff: true);
+            return GetValues(Hardwares, SensorType.Temperature, new[] { "package", "ccd1", "tdie" }, subtractCpuTempDiff: true);
         }
 
         private int GetCpuLoad(IHardware hardware)

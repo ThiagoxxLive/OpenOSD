@@ -54,39 +54,33 @@ namespace OpenOSD.Entity
         }
 
         private string HandleGpuVendor(string Name)
-        {
-            var vendors = new[] { "NVIDIA", "AMD", "Intel" };
-            return vendors.FirstOrDefault(v => Name.IndexOf(v, StringComparison.OrdinalIgnoreCase) >= 0);
+        {   
+            return new[] { "NVIDIA", "AMD", "Intel" }.FirstOrDefault(v => Name.IndexOf(v, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         private float GetGpuTemperature(IHardware hardware)
         {            
-            string[] Sensors = new[] { "gpu core", "gpu temperature", "core" };
-            return GetValues(this.GetHardware(hardware), SensorType.Temperature, Sensors);
+            return GetValues(this.GetHardware(hardware), SensorType.Temperature, new[] { "gpu core", "gpu temperature", "core" });
         }
 
         private float GetGpuClock(IHardware hardware)
         {            
-            string[] Sensors = new[] { "gpu core", "GPU Core", "Core", "Graphics" };
-            return GetValues(this.GetHardware(hardware), SensorType.Clock, Sensors);
+            return GetValues(this.GetHardware(hardware), SensorType.Clock, new[] { "gpu core", "GPU Core", "Core", "Graphics" });
         }
 
         private int GetGpuLoad(IHardware hardware)
         {            
-            string[] Sensors = new[] { "GPU Core", "GPU Usage", "Usage" };
-            return (int)Math.Round(GetValues(this.GetHardware(hardware), SensorType.Load, Sensors));
+            return (int)Math.Round(GetValues(this.GetHardware(hardware), SensorType.Load, new[] { "GPU Core", "GPU Usage", "Usage" }));
         }
 
         private float GetGpuVoltage(IHardware hardware)
         {            
-            string[] Sensors = new[] { "GPU Core", "Core", "GPU" };
-            return GetValues(this.GetHardware(hardware), SensorType.Voltage, Sensors);
+            return GetValues(this.GetHardware(hardware), SensorType.Voltage, new[] { "GPU Core", "Core", "GPU" });
         }
 
         private float GetVram(IHardware hardware)
         {            
-            string[] Sensors = new[] { "Memory Used" };
-            return GetValues(this.GetHardware(hardware), SensorType.SmallData, Sensors);
+            return GetValues(this.GetHardware(hardware), SensorType.SmallData, new[] { "Memory Used" });
         }
 
         public void Close()

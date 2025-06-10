@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSensors));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.LblMoboName = new System.Windows.Forms.Label();
             this.LblVoltageValue = new System.Windows.Forms.Label();
             this.LblVoltage = new System.Windows.Forms.Label();
             this.PbVoltage = new MetroFramework.Controls.MetroProgressBar();
@@ -41,7 +40,6 @@
             this.LblClockValue = new System.Windows.Forms.Label();
             this.LblUsage = new System.Windows.Forms.Label();
             this.PgClock = new MetroFramework.Controls.MetroProgressBar();
-            this.LblCpuName = new System.Windows.Forms.Label();
             this.LblCPU = new System.Windows.Forms.Label();
             this.CpuSpinner = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -54,7 +52,6 @@
             this.LblGpuClockValue = new System.Windows.Forms.Label();
             this.LblGpuClock = new System.Windows.Forms.Label();
             this.PgGpuClock = new MetroFramework.Controls.MetroProgressBar();
-            this.LblGpuName = new System.Windows.Forms.Label();
             this.LblGPU = new System.Windows.Forms.Label();
             this.GpuSpinner = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.TimerDash = new System.Windows.Forms.Timer(this.components);
@@ -75,6 +72,9 @@
             this.PbLogo = new System.Windows.Forms.PictureBox();
             this.BtnSettings = new System.Windows.Forms.PictureBox();
             this.TtDash = new System.Windows.Forms.ToolTip(this.components);
+            this.TxtCpuName = new System.Windows.Forms.TextBox();
+            this.TxtMoboName = new System.Windows.Forms.TextBox();
+            this.TxtGpuName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -86,7 +86,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.panel1.Controls.Add(this.LblMoboName);
+            this.panel1.Controls.Add(this.TxtCpuName);
             this.panel1.Controls.Add(this.LblVoltageValue);
             this.panel1.Controls.Add(this.LblVoltage);
             this.panel1.Controls.Add(this.PbVoltage);
@@ -96,24 +96,12 @@
             this.panel1.Controls.Add(this.LblClockValue);
             this.panel1.Controls.Add(this.LblUsage);
             this.panel1.Controls.Add(this.PgClock);
-            this.panel1.Controls.Add(this.LblCpuName);
             this.panel1.Controls.Add(this.LblCPU);
             this.panel1.Controls.Add(this.CpuSpinner);
             this.panel1.Location = new System.Drawing.Point(23, 111);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(415, 227);
             this.panel1.TabIndex = 3;
-            // 
-            // LblMoboName
-            // 
-            this.LblMoboName.AutoSize = true;
-            this.LblMoboName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblMoboName.ForeColor = System.Drawing.Color.White;
-            this.LblMoboName.Location = new System.Drawing.Point(22, 52);
-            this.LblMoboName.Name = "LblMoboName";
-            this.LblMoboName.Size = new System.Drawing.Size(38, 13);
-            this.LblMoboName.TabIndex = 14;
-            this.LblMoboName.Text = "Mobo";
             // 
             // LblVoltageValue
             // 
@@ -210,25 +198,14 @@
             this.PgClock.TabIndex = 5;
             this.PgClock.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // LblCpuName
-            // 
-            this.LblCpuName.AutoSize = true;
-            this.LblCpuName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCpuName.ForeColor = System.Drawing.Color.White;
-            this.LblCpuName.Location = new System.Drawing.Point(71, 21);
-            this.LblCpuName.Name = "LblCpuName";
-            this.LblCpuName.Size = new System.Drawing.Size(52, 30);
-            this.LblCpuName.TabIndex = 4;
-            this.LblCpuName.Text = "CPU";
-            // 
             // LblCPU
             // 
             this.LblCPU.AutoSize = true;
-            this.LblCPU.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCPU.Font = new System.Drawing.Font("Segoe UI", 18.75F, System.Drawing.FontStyle.Bold);
             this.LblCPU.ForeColor = System.Drawing.Color.White;
-            this.LblCPU.Location = new System.Drawing.Point(20, 22);
+            this.LblCPU.Location = new System.Drawing.Point(10, 13);
             this.LblCPU.Name = "LblCPU";
-            this.LblCPU.Size = new System.Drawing.Size(54, 30);
+            this.LblCPU.Size = new System.Drawing.Size(64, 35);
             this.LblCPU.TabIndex = 3;
             this.LblCPU.Text = "CPU";
             // 
@@ -257,6 +234,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.panel2.Controls.Add(this.TxtGpuName);
             this.panel2.Controls.Add(this.lblVramValue);
             this.panel2.Controls.Add(this.LblVram);
             this.panel2.Controls.Add(this.PbVram);
@@ -266,7 +244,6 @@
             this.panel2.Controls.Add(this.LblGpuClockValue);
             this.panel2.Controls.Add(this.LblGpuClock);
             this.panel2.Controls.Add(this.PgGpuClock);
-            this.panel2.Controls.Add(this.LblGpuName);
             this.panel2.Controls.Add(this.LblGPU);
             this.panel2.Controls.Add(this.GpuSpinner);
             this.panel2.Location = new System.Drawing.Point(444, 111);
@@ -369,25 +346,14 @@
             this.PgGpuClock.TabIndex = 5;
             this.PgGpuClock.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // LblGpuName
-            // 
-            this.LblGpuName.AutoSize = true;
-            this.LblGpuName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblGpuName.ForeColor = System.Drawing.Color.White;
-            this.LblGpuName.Location = new System.Drawing.Point(71, 21);
-            this.LblGpuName.Name = "LblGpuName";
-            this.LblGpuName.Size = new System.Drawing.Size(53, 30);
-            this.LblGpuName.TabIndex = 4;
-            this.LblGpuName.Text = "GPU";
-            // 
             // LblGPU
             // 
             this.LblGPU.AutoSize = true;
-            this.LblGPU.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblGPU.Font = new System.Drawing.Font("Segoe UI", 18.75F, System.Drawing.FontStyle.Bold);
             this.LblGPU.ForeColor = System.Drawing.Color.White;
-            this.LblGPU.Location = new System.Drawing.Point(20, 22);
+            this.LblGPU.Location = new System.Drawing.Point(7, 10);
             this.LblGPU.Name = "LblGPU";
-            this.LblGPU.Size = new System.Drawing.Size(56, 30);
+            this.LblGPU.Size = new System.Drawing.Size(66, 35);
             this.LblGPU.TabIndex = 3;
             this.LblGPU.Text = "GPU";
             // 
@@ -449,7 +415,7 @@
             this.lblFreeRam.AutoSize = true;
             this.lblFreeRam.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFreeRam.ForeColor = System.Drawing.Color.White;
-            this.lblFreeRam.Location = new System.Drawing.Point(22, 100);
+            this.lblFreeRam.Location = new System.Drawing.Point(23, 100);
             this.lblFreeRam.Name = "lblFreeRam";
             this.lblFreeRam.Size = new System.Drawing.Size(16, 15);
             this.lblFreeRam.TabIndex = 14;
@@ -460,7 +426,7 @@
             this.LblUsedRam.AutoSize = true;
             this.LblUsedRam.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUsedRam.ForeColor = System.Drawing.Color.White;
-            this.LblUsedRam.Location = new System.Drawing.Point(22, 82);
+            this.LblUsedRam.Location = new System.Drawing.Point(23, 82);
             this.LblUsedRam.Name = "LblUsedRam";
             this.LblUsedRam.Size = new System.Drawing.Size(19, 15);
             this.LblUsedRam.TabIndex = 13;
@@ -598,12 +564,49 @@
             this.TtDash.SetToolTip(this.BtnSettings, "Configurações");
             this.BtnSettings.Click += new System.EventHandler(this.BtnSettings_Click);
             // 
+            // TxtCpuName
+            // 
+            this.TxtCpuName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.TxtCpuName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtCpuName.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.TxtCpuName.ForeColor = System.Drawing.Color.White;
+            this.TxtCpuName.Location = new System.Drawing.Point(80, 13);
+            this.TxtCpuName.Name = "TxtCpuName";
+            this.TxtCpuName.Size = new System.Drawing.Size(320, 28);
+            this.TxtCpuName.TabIndex = 15;
+            this.TxtCpuName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // TxtMoboName
+            // 
+            this.TxtMoboName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.TxtMoboName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtMoboName.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.TxtMoboName.ForeColor = System.Drawing.Color.White;
+            this.TxtMoboName.Location = new System.Drawing.Point(284, 83);
+            this.TxtMoboName.Name = "TxtMoboName";
+            this.TxtMoboName.Size = new System.Drawing.Size(320, 15);
+            this.TxtMoboName.TabIndex = 16;
+            this.TxtMoboName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TxtGpuName
+            // 
+            this.TxtGpuName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.TxtGpuName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtGpuName.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.TxtGpuName.ForeColor = System.Drawing.Color.White;
+            this.TxtGpuName.Location = new System.Drawing.Point(79, 11);
+            this.TxtGpuName.Name = "TxtGpuName";
+            this.TxtGpuName.Size = new System.Drawing.Size(320, 28);
+            this.TxtGpuName.TabIndex = 16;
+            this.TxtGpuName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // FrmSensors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 493);
             this.ControlBox = false;
+            this.Controls.Add(this.TxtMoboName);
             this.Controls.Add(this.BtnSettings);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.LblClock);
@@ -639,7 +642,6 @@
         #endregion
         private Bunifu.Framework.UI.BunifuCircleProgressbar CpuSpinner;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label LblCpuName;
         private System.Windows.Forms.Label LblCPU;
         private MetroFramework.Controls.MetroProgressBar PgClock;
         private System.Windows.Forms.Label LblUsage;
@@ -657,7 +659,6 @@
         private System.Windows.Forms.Label LblGpuClockValue;
         private System.Windows.Forms.Label LblGpuClock;
         private MetroFramework.Controls.MetroProgressBar PgGpuClock;
-        private System.Windows.Forms.Label LblGpuName;
         private System.Windows.Forms.Label LblGPU;
         private Bunifu.Framework.UI.BunifuCircleProgressbar GpuSpinner;
         private System.Windows.Forms.PictureBox PbLogo;
@@ -674,7 +675,6 @@
         private System.Windows.Forms.Label LblRamUsage;
         private System.Windows.Forms.Label LblClock;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label LblMoboName;
         private System.Windows.Forms.Label LblInternalIp;
         private System.Windows.Forms.Label lblExternalIp;
         private System.Windows.Forms.Label lblLAN;
@@ -682,6 +682,9 @@
         private System.Windows.Forms.Label LblDown;
         private System.Windows.Forms.PictureBox BtnSettings;
         private System.Windows.Forms.ToolTip TtDash;
+        private System.Windows.Forms.TextBox TxtCpuName;
+        private System.Windows.Forms.TextBox TxtMoboName;
+        private System.Windows.Forms.TextBox TxtGpuName;
     }
 }
 
