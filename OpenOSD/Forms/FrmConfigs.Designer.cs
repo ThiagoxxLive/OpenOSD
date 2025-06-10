@@ -36,6 +36,10 @@
             this.BtnQuit = new MetroFramework.Controls.MetroButton();
             this.LblCpuTempTarget = new MetroFramework.Controls.MetroLabel();
             this.GpCpu = new System.Windows.Forms.GroupBox();
+            this.LblCpuTempDiffValue = new MetroFramework.Controls.MetroLabel();
+            this.SlCpuTempDiff = new Bunifu.Framework.UI.BunifuSlider();
+            this.LblCpuTargetClockValue = new MetroFramework.Controls.MetroLabel();
+            this.SlCpuTargetClock = new Bunifu.Framework.UI.BunifuSlider();
             this.LblCpuTargetTempValue = new MetroFramework.Controls.MetroLabel();
             this.SlCpuTargetTemp = new Bunifu.Framework.UI.BunifuSlider();
             this.LblCpuTempDiff = new MetroFramework.Controls.MetroLabel();
@@ -45,21 +49,17 @@
             this.CbCpuTargetClock = new MetroFramework.Controls.MetroComboBox();
             this.LblCpuTargetClockColor = new MetroFramework.Controls.MetroLabel();
             this.TtSettings = new System.Windows.Forms.ToolTip(this.components);
-            this.LblCpuTargetClockValue = new MetroFramework.Controls.MetroLabel();
-            this.SlCpuTargetClock = new Bunifu.Framework.UI.BunifuSlider();
-            this.LblCpuTempDiffValue = new MetroFramework.Controls.MetroLabel();
-            this.SlCpuTempDiff = new Bunifu.Framework.UI.BunifuSlider();
-            this.GpGpu = new System.Windows.Forms.GroupBox();
             this.LblGpuTargetClockValue = new MetroFramework.Controls.MetroLabel();
-            this.SlGpuTargetClock = new Bunifu.Framework.UI.BunifuSlider();
             this.LblGpuTargetTempValue = new MetroFramework.Controls.MetroLabel();
-            this.SlGpuTargetTemp = new Bunifu.Framework.UI.BunifuSlider();
             this.LblGpuTargetClock = new MetroFramework.Controls.MetroLabel();
             this.LblGpuTargetTempColor = new MetroFramework.Controls.MetroLabel();
-            this.CbGpuTargetTemp = new MetroFramework.Controls.MetroComboBox();
-            this.CbGpuTargetClock = new MetroFramework.Controls.MetroComboBox();
             this.LblGpuTargetClockColor = new MetroFramework.Controls.MetroLabel();
             this.LblGpuTargetTemp = new MetroFramework.Controls.MetroLabel();
+            this.GpGpu = new System.Windows.Forms.GroupBox();
+            this.SlGpuTargetClock = new Bunifu.Framework.UI.BunifuSlider();
+            this.SlGpuTargetTemp = new Bunifu.Framework.UI.BunifuSlider();
+            this.CbGpuTargetTemp = new MetroFramework.Controls.MetroComboBox();
+            this.CbGpuTargetClock = new MetroFramework.Controls.MetroComboBox();
             this.GpCpu.SuspendLayout();
             this.GpGpu.SuspendLayout();
             this.SuspendLayout();
@@ -150,6 +150,60 @@
             this.GpCpu.TabIndex = 7;
             this.GpCpu.TabStop = false;
             this.GpCpu.Text = "Parâmetros CPU";
+            // 
+            // LblCpuTempDiffValue
+            // 
+            this.LblCpuTempDiffValue.AutoSize = true;
+            this.LblCpuTempDiffValue.Location = new System.Drawing.Point(145, 149);
+            this.LblCpuTempDiffValue.Name = "LblCpuTempDiffValue";
+            this.LblCpuTempDiffValue.Size = new System.Drawing.Size(16, 19);
+            this.LblCpuTempDiffValue.Style = MetroFramework.MetroColorStyle.Black;
+            this.LblCpuTempDiffValue.TabIndex = 22;
+            this.LblCpuTempDiffValue.Text = "0";
+            this.LblCpuTempDiffValue.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.TtSettings.SetToolTip(this.LblCpuTempDiffValue, "Temperatura para trocar a cor da barra na tela de monitoramento. (Somente números" +
+        ")");
+            // 
+            // SlCpuTempDiff
+            // 
+            this.SlCpuTempDiff.BackColor = System.Drawing.Color.Transparent;
+            this.SlCpuTempDiff.BackgroudColor = System.Drawing.Color.DarkGray;
+            this.SlCpuTempDiff.BorderRadius = 0;
+            this.SlCpuTempDiff.IndicatorColor = System.Drawing.Color.Gray;
+            this.SlCpuTempDiff.Location = new System.Drawing.Point(11, 147);
+            this.SlCpuTempDiff.MaximumValue = 20;
+            this.SlCpuTempDiff.Name = "SlCpuTempDiff";
+            this.SlCpuTempDiff.Size = new System.Drawing.Size(128, 30);
+            this.SlCpuTempDiff.TabIndex = 21;
+            this.SlCpuTempDiff.Value = 0;
+            this.SlCpuTempDiff.ValueChanged += new System.EventHandler(this.SlCpuTempDiff_ValueChanged);
+            // 
+            // LblCpuTargetClockValue
+            // 
+            this.LblCpuTargetClockValue.AutoSize = true;
+            this.LblCpuTargetClockValue.Location = new System.Drawing.Point(145, 94);
+            this.LblCpuTargetClockValue.Name = "LblCpuTargetClockValue";
+            this.LblCpuTargetClockValue.Size = new System.Drawing.Size(16, 19);
+            this.LblCpuTargetClockValue.Style = MetroFramework.MetroColorStyle.Black;
+            this.LblCpuTargetClockValue.TabIndex = 20;
+            this.LblCpuTargetClockValue.Text = "0";
+            this.LblCpuTargetClockValue.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.TtSettings.SetToolTip(this.LblCpuTargetClockValue, "Temperatura para trocar a cor da barra na tela de monitoramento. (Somente números" +
+        ")");
+            // 
+            // SlCpuTargetClock
+            // 
+            this.SlCpuTargetClock.BackColor = System.Drawing.Color.Transparent;
+            this.SlCpuTargetClock.BackgroudColor = System.Drawing.Color.DarkGray;
+            this.SlCpuTargetClock.BorderRadius = 0;
+            this.SlCpuTargetClock.IndicatorColor = System.Drawing.Color.Gray;
+            this.SlCpuTargetClock.Location = new System.Drawing.Point(11, 92);
+            this.SlCpuTargetClock.MaximumValue = 7000;
+            this.SlCpuTargetClock.Name = "SlCpuTargetClock";
+            this.SlCpuTargetClock.Size = new System.Drawing.Size(128, 30);
+            this.SlCpuTargetClock.TabIndex = 19;
+            this.SlCpuTargetClock.Value = 0;
+            this.SlCpuTargetClock.ValueChanged += new System.EventHandler(this.SlCpuTargetClock_ValueChanged);
             // 
             // LblCpuTargetTempValue
             // 
@@ -249,81 +303,6 @@
             this.LblCpuTargetClockColor.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TtSettings.SetToolTip(this.LblCpuTargetClockColor, "Cor da barra de clock após ultrapassar o valor do campo ao lado.");
             // 
-            // LblCpuTargetClockValue
-            // 
-            this.LblCpuTargetClockValue.AutoSize = true;
-            this.LblCpuTargetClockValue.Location = new System.Drawing.Point(145, 94);
-            this.LblCpuTargetClockValue.Name = "LblCpuTargetClockValue";
-            this.LblCpuTargetClockValue.Size = new System.Drawing.Size(16, 19);
-            this.LblCpuTargetClockValue.Style = MetroFramework.MetroColorStyle.Black;
-            this.LblCpuTargetClockValue.TabIndex = 20;
-            this.LblCpuTargetClockValue.Text = "0";
-            this.LblCpuTargetClockValue.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.TtSettings.SetToolTip(this.LblCpuTargetClockValue, "Temperatura para trocar a cor da barra na tela de monitoramento. (Somente números" +
-        ")");
-            // 
-            // SlCpuTargetClock
-            // 
-            this.SlCpuTargetClock.BackColor = System.Drawing.Color.Transparent;
-            this.SlCpuTargetClock.BackgroudColor = System.Drawing.Color.DarkGray;
-            this.SlCpuTargetClock.BorderRadius = 0;
-            this.SlCpuTargetClock.IndicatorColor = System.Drawing.Color.Gray;
-            this.SlCpuTargetClock.Location = new System.Drawing.Point(11, 92);
-            this.SlCpuTargetClock.MaximumValue = 7000;
-            this.SlCpuTargetClock.Name = "SlCpuTargetClock";
-            this.SlCpuTargetClock.Size = new System.Drawing.Size(128, 30);
-            this.SlCpuTargetClock.TabIndex = 19;
-            this.SlCpuTargetClock.Value = 0;
-            this.SlCpuTargetClock.ValueChanged += new System.EventHandler(this.SlCpuTargetClock_ValueChanged);
-            // 
-            // LblCpuTempDiffValue
-            // 
-            this.LblCpuTempDiffValue.AutoSize = true;
-            this.LblCpuTempDiffValue.Location = new System.Drawing.Point(145, 149);
-            this.LblCpuTempDiffValue.Name = "LblCpuTempDiffValue";
-            this.LblCpuTempDiffValue.Size = new System.Drawing.Size(16, 19);
-            this.LblCpuTempDiffValue.Style = MetroFramework.MetroColorStyle.Black;
-            this.LblCpuTempDiffValue.TabIndex = 22;
-            this.LblCpuTempDiffValue.Text = "0";
-            this.LblCpuTempDiffValue.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.TtSettings.SetToolTip(this.LblCpuTempDiffValue, "Temperatura para trocar a cor da barra na tela de monitoramento. (Somente números" +
-        ")");
-            // 
-            // SlCpuTempDiff
-            // 
-            this.SlCpuTempDiff.BackColor = System.Drawing.Color.Transparent;
-            this.SlCpuTempDiff.BackgroudColor = System.Drawing.Color.DarkGray;
-            this.SlCpuTempDiff.BorderRadius = 0;
-            this.SlCpuTempDiff.IndicatorColor = System.Drawing.Color.Gray;
-            this.SlCpuTempDiff.Location = new System.Drawing.Point(11, 147);
-            this.SlCpuTempDiff.MaximumValue = 20;
-            this.SlCpuTempDiff.Name = "SlCpuTempDiff";
-            this.SlCpuTempDiff.Size = new System.Drawing.Size(128, 30);
-            this.SlCpuTempDiff.TabIndex = 21;
-            this.SlCpuTempDiff.Value = 0;
-            this.SlCpuTempDiff.ValueChanged += new System.EventHandler(this.SlCpuTempDiff_ValueChanged);
-            // 
-            // GpGpu
-            // 
-            this.GpGpu.Controls.Add(this.LblGpuTargetClockValue);
-            this.GpGpu.Controls.Add(this.SlGpuTargetClock);
-            this.GpGpu.Controls.Add(this.LblGpuTargetTempValue);
-            this.GpGpu.Controls.Add(this.SlGpuTargetTemp);
-            this.GpGpu.Controls.Add(this.LblGpuTargetClock);
-            this.GpGpu.Controls.Add(this.LblGpuTargetTempColor);
-            this.GpGpu.Controls.Add(this.CbGpuTargetTemp);
-            this.GpGpu.Controls.Add(this.CbGpuTargetClock);
-            this.GpGpu.Controls.Add(this.LblGpuTargetClockColor);
-            this.GpGpu.Controls.Add(this.LblGpuTargetTemp);
-            this.GpGpu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GpGpu.ForeColor = System.Drawing.Color.Gray;
-            this.GpGpu.Location = new System.Drawing.Point(449, 63);
-            this.GpGpu.Name = "GpGpu";
-            this.GpGpu.Size = new System.Drawing.Size(420, 225);
-            this.GpGpu.TabIndex = 8;
-            this.GpGpu.TabStop = false;
-            this.GpGpu.Text = "Parâmetros CPU";
-            // 
             // LblGpuTargetClockValue
             // 
             this.LblGpuTargetClockValue.AutoSize = true;
@@ -337,20 +316,6 @@
             this.TtSettings.SetToolTip(this.LblGpuTargetClockValue, "Temperatura para trocar a cor da barra na tela de monitoramento. (Somente números" +
         ")");
             // 
-            // SlGpuTargetClock
-            // 
-            this.SlGpuTargetClock.BackColor = System.Drawing.Color.Transparent;
-            this.SlGpuTargetClock.BackgroudColor = System.Drawing.Color.DarkGray;
-            this.SlGpuTargetClock.BorderRadius = 0;
-            this.SlGpuTargetClock.IndicatorColor = System.Drawing.Color.Gray;
-            this.SlGpuTargetClock.Location = new System.Drawing.Point(11, 92);
-            this.SlGpuTargetClock.MaximumValue = 7000;
-            this.SlGpuTargetClock.Name = "SlGpuTargetClock";
-            this.SlGpuTargetClock.Size = new System.Drawing.Size(128, 30);
-            this.SlGpuTargetClock.TabIndex = 19;
-            this.SlGpuTargetClock.Value = 0;
-            this.SlGpuTargetClock.ValueChanged += new System.EventHandler(this.SlGpuTargetClock_ValueChanged);
-            // 
             // LblGpuTargetTempValue
             // 
             this.LblGpuTargetTempValue.AutoSize = true;
@@ -363,20 +328,6 @@
             this.LblGpuTargetTempValue.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TtSettings.SetToolTip(this.LblGpuTargetTempValue, "Temperatura para trocar a cor da barra na tela de monitoramento. (Somente números" +
         ")");
-            // 
-            // SlGpuTargetTemp
-            // 
-            this.SlGpuTargetTemp.BackColor = System.Drawing.Color.Transparent;
-            this.SlGpuTargetTemp.BackgroudColor = System.Drawing.Color.DarkGray;
-            this.SlGpuTargetTemp.BorderRadius = 0;
-            this.SlGpuTargetTemp.IndicatorColor = System.Drawing.Color.Gray;
-            this.SlGpuTargetTemp.Location = new System.Drawing.Point(11, 37);
-            this.SlGpuTargetTemp.MaximumValue = 95;
-            this.SlGpuTargetTemp.Name = "SlGpuTargetTemp";
-            this.SlGpuTargetTemp.Size = new System.Drawing.Size(128, 30);
-            this.SlGpuTargetTemp.TabIndex = 17;
-            this.SlGpuTargetTemp.Value = 0;
-            this.SlGpuTargetTemp.ValueChanged += new System.EventHandler(this.SlGpuTargetTemp_ValueChanged);
             // 
             // LblGpuTargetClock
             // 
@@ -402,28 +353,6 @@
             this.LblGpuTargetTempColor.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TtSettings.SetToolTip(this.LblGpuTargetTempColor, "Cor da barra de temperatura após ultrapassar o valor do campo ao lado.");
             // 
-            // CbGpuTargetTemp
-            // 
-            this.CbGpuTargetTemp.FontSize = MetroFramework.MetroLinkSize.Small;
-            this.CbGpuTargetTemp.FormattingEnabled = true;
-            this.CbGpuTargetTemp.ItemHeight = 19;
-            this.CbGpuTargetTemp.Location = new System.Drawing.Point(217, 34);
-            this.CbGpuTargetTemp.Name = "CbGpuTargetTemp";
-            this.CbGpuTargetTemp.Size = new System.Drawing.Size(121, 25);
-            this.CbGpuTargetTemp.TabIndex = 11;
-            this.CbGpuTargetTemp.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // CbGpuTargetClock
-            // 
-            this.CbGpuTargetClock.FontSize = MetroFramework.MetroLinkSize.Small;
-            this.CbGpuTargetClock.FormattingEnabled = true;
-            this.CbGpuTargetClock.ItemHeight = 19;
-            this.CbGpuTargetClock.Location = new System.Drawing.Point(217, 92);
-            this.CbGpuTargetClock.Name = "CbGpuTargetClock";
-            this.CbGpuTargetClock.Size = new System.Drawing.Size(121, 25);
-            this.CbGpuTargetClock.TabIndex = 10;
-            this.CbGpuTargetClock.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
             // LblGpuTargetClockColor
             // 
             this.LblGpuTargetClockColor.AutoSize = true;
@@ -448,6 +377,77 @@
             this.LblGpuTargetTemp.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TtSettings.SetToolTip(this.LblGpuTargetTemp, "Temperatura para trocar a cor da barra na tela de monitoramento. (Somente números" +
         ")");
+            // 
+            // GpGpu
+            // 
+            this.GpGpu.Controls.Add(this.LblGpuTargetClockValue);
+            this.GpGpu.Controls.Add(this.SlGpuTargetClock);
+            this.GpGpu.Controls.Add(this.LblGpuTargetTempValue);
+            this.GpGpu.Controls.Add(this.SlGpuTargetTemp);
+            this.GpGpu.Controls.Add(this.LblGpuTargetClock);
+            this.GpGpu.Controls.Add(this.LblGpuTargetTempColor);
+            this.GpGpu.Controls.Add(this.CbGpuTargetTemp);
+            this.GpGpu.Controls.Add(this.CbGpuTargetClock);
+            this.GpGpu.Controls.Add(this.LblGpuTargetClockColor);
+            this.GpGpu.Controls.Add(this.LblGpuTargetTemp);
+            this.GpGpu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GpGpu.ForeColor = System.Drawing.Color.Gray;
+            this.GpGpu.Location = new System.Drawing.Point(449, 63);
+            this.GpGpu.Name = "GpGpu";
+            this.GpGpu.Size = new System.Drawing.Size(420, 225);
+            this.GpGpu.TabIndex = 8;
+            this.GpGpu.TabStop = false;
+            this.GpGpu.Text = "Parâmetros GPU";
+            // 
+            // SlGpuTargetClock
+            // 
+            this.SlGpuTargetClock.BackColor = System.Drawing.Color.Transparent;
+            this.SlGpuTargetClock.BackgroudColor = System.Drawing.Color.DarkGray;
+            this.SlGpuTargetClock.BorderRadius = 0;
+            this.SlGpuTargetClock.IndicatorColor = System.Drawing.Color.Gray;
+            this.SlGpuTargetClock.Location = new System.Drawing.Point(11, 92);
+            this.SlGpuTargetClock.MaximumValue = 7000;
+            this.SlGpuTargetClock.Name = "SlGpuTargetClock";
+            this.SlGpuTargetClock.Size = new System.Drawing.Size(128, 30);
+            this.SlGpuTargetClock.TabIndex = 19;
+            this.SlGpuTargetClock.Value = 0;
+            this.SlGpuTargetClock.ValueChanged += new System.EventHandler(this.SlGpuTargetClock_ValueChanged);
+            // 
+            // SlGpuTargetTemp
+            // 
+            this.SlGpuTargetTemp.BackColor = System.Drawing.Color.Transparent;
+            this.SlGpuTargetTemp.BackgroudColor = System.Drawing.Color.DarkGray;
+            this.SlGpuTargetTemp.BorderRadius = 0;
+            this.SlGpuTargetTemp.IndicatorColor = System.Drawing.Color.Gray;
+            this.SlGpuTargetTemp.Location = new System.Drawing.Point(11, 37);
+            this.SlGpuTargetTemp.MaximumValue = 95;
+            this.SlGpuTargetTemp.Name = "SlGpuTargetTemp";
+            this.SlGpuTargetTemp.Size = new System.Drawing.Size(128, 30);
+            this.SlGpuTargetTemp.TabIndex = 17;
+            this.SlGpuTargetTemp.Value = 0;
+            this.SlGpuTargetTemp.ValueChanged += new System.EventHandler(this.SlGpuTargetTemp_ValueChanged);
+            // 
+            // CbGpuTargetTemp
+            // 
+            this.CbGpuTargetTemp.FontSize = MetroFramework.MetroLinkSize.Small;
+            this.CbGpuTargetTemp.FormattingEnabled = true;
+            this.CbGpuTargetTemp.ItemHeight = 19;
+            this.CbGpuTargetTemp.Location = new System.Drawing.Point(217, 34);
+            this.CbGpuTargetTemp.Name = "CbGpuTargetTemp";
+            this.CbGpuTargetTemp.Size = new System.Drawing.Size(121, 25);
+            this.CbGpuTargetTemp.TabIndex = 11;
+            this.CbGpuTargetTemp.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // CbGpuTargetClock
+            // 
+            this.CbGpuTargetClock.FontSize = MetroFramework.MetroLinkSize.Small;
+            this.CbGpuTargetClock.FormattingEnabled = true;
+            this.CbGpuTargetClock.ItemHeight = 19;
+            this.CbGpuTargetClock.Location = new System.Drawing.Point(217, 92);
+            this.CbGpuTargetClock.Name = "CbGpuTargetClock";
+            this.CbGpuTargetClock.Size = new System.Drawing.Size(121, 25);
+            this.CbGpuTargetClock.TabIndex = 10;
+            this.CbGpuTargetClock.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // FrmConfigs
             // 
