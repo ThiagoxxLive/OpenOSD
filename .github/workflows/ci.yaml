@@ -1,0 +1,35 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1
+
+    - name: Restore NuGet packages
+      run: nuget restore OpenOSD.sln
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2.0.0
+
+    - name: Build Solution
+      run: msbuild OpenOSD.sln /p:Configuration=Release
+
+    - name: Zip Bin
+      run: Compress-Archive -Path OpenOSD\bin\Release\* -DestinationPath OpenOSD.zip
+
+    - name: Upload
+      uses: actions/upload-artifact@v4
+      with:
+        name: OpenOSD
+        path: OpenOSD.zip
