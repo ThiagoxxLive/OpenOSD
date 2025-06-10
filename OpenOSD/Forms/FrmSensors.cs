@@ -52,6 +52,11 @@ namespace OpenOSD
         {
             this.LoadLogo();
             this.LblClock.Text = DateTime.Now.ToString("HH:mm");
+
+            this.NiMain.Icon = this.Icon;
+            this.NiMain.Text = "OpenOSD";
+            this.NiMain.Icon = this.Icon;
+            this.NiMain.Visible = false;
         }
 
         private void LoadLogo()
@@ -61,12 +66,6 @@ namespace OpenOSD
             if (!string.IsNullOrEmpty(path) && File.Exists(path))
             {
                 this.PbLogo.Image = Image.FromFile(path);
-                
-                using (var bmp = new Bitmap(path))
-                {
-                    IntPtr hIcon = bmp.GetHicon();
-                    this.Icon = Icon.FromHandle(hIcon);
-                }
             }
         }
 
@@ -90,16 +89,16 @@ namespace OpenOSD
             {
                 this.Invoke(new Action(() =>
                 {
-                    UpdateCpuControls(CpuService, cpuClock);
+                    UpdateCpuControls(cpuClock);
                 }));
             }
             else
             {
-                UpdateCpuControls(CpuService, cpuClock);
+                UpdateCpuControls(cpuClock);
             }
         }
 
-        private void UpdateCpuControls(CpuService cpu, double cpuClock)
+        private void UpdateCpuControls(double cpuClock)
         {
 
             this.TxtMoboName.Text = this.cpu.MotherboardName;
@@ -131,15 +130,15 @@ namespace OpenOSD
 
             if (this.InvokeRequired)
             {
-                this.Invoke(new Action(() => UpdateGpuControls(this.GpuService)));
+                this.Invoke(new Action(() => UpdateGpuControls()));
             }
             else
             {
-                UpdateGpuControls(this.GpuService);
+                UpdateGpuControls();
             }
         }
 
-        private void UpdateGpuControls(GpuService gpu)
+        private void UpdateGpuControls()
         {
             TxtGpuName.Text = this.gpu.Name;
 
@@ -155,7 +154,7 @@ namespace OpenOSD
             LblGpuTempValue.Text = $"{this.gpu.Temperature:0.#} ºC";            
 
             PbVram.Value = (int)Math.Round(this.gpu.Vram);
-            lblVramValue.Text = $"{Math.Round(this.gpu.Vram).ToString()} MB";
+            lblVramValue.Text = $"{Math.Round(this.gpu.Vram)} MB";
         }
 
 
@@ -165,20 +164,20 @@ namespace OpenOSD
 
             if (this.InvokeRequired)
             {
-                this.Invoke(new Action(() => UpdateRamControls(this.RamService)));
+                this.Invoke(new Action(() => UpdateRamControls()));
             }
             else
             {
-                UpdateRamControls(this.RamService);
+                UpdateRamControls();
             }
         }
-        private void UpdateRamControls(RamService ram)
+        private void UpdateRamControls()
         {
             this.lblRamValue.Text = this.ram.GetModel();
             this.PbRam.Value = this.ram.UsedMemoryPercent;
-            this.LblRamUsage.Text = $"{this.ram.UsedMemoryPercent.ToString()}%";
-            this.LblUsedRam.Text = $"Used:                 {this.ram.UsedMemoryGb.ToString()} GB";
-            this.lblFreeRam.Text = $"Free:                  {this.ram.FreeMemoryGb.ToString()} GB";
+            this.LblRamUsage.Text = $"{this.ram.UsedMemoryPercent}%";
+            this.LblUsedRam.Text = $"Used:                 {this.ram.UsedMemoryGb} GB";
+            this.lblFreeRam.Text = $"Free:                  {this.ram.FreeMemoryGb} GB";
         }
         
         private async void UpdateLan()
@@ -192,22 +191,22 @@ namespace OpenOSD
             {
                 this.Invoke(new Action(() =>
                 {
-                    UpdateLanControls(this.LanService);
+                    UpdateLanControls();
                 }));
             }
             else
             {
-                UpdateLanControls(this.LanService);
+                UpdateLanControls();
             }
         }
 
-        private void UpdateLanControls(LanService lan)
+        private void UpdateLanControls()
         {
-            this.lblExternalIp.Text = $"External IP: {this.lan.ExternalIP.ToString()}";
-            this.LblInternalIp.Text = $"Internal IP: {this.lan.InternalIP.ToString()}";
+            this.lblExternalIp.Text = $"External IP: {this.lan.ExternalIP}";
+            this.LblInternalIp.Text = $"Internal IP: {this.lan.InternalIP}";
             
-            this.LblUp.Text = $"Up: {(this.lan.UploadMBps * 8).ToString("F2")} Mbps";
-            this.LblDown.Text = $"Down: {(this.lan.DownloadMBps * 8).ToString("F2")} Mbps";
+            this.LblUp.Text = $"Up: {(this.lan.UploadMBps * 8):F2} Mbps";
+            this.LblDown.Text = $"Down: {(this.lan.DownloadMBps * 8):F2} Mbps";
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -218,6 +217,11 @@ namespace OpenOSD
         }
 
         private void BtnSettings_Click(object sender, EventArgs e)
+        {
+            this.OpenConfigsForm();
+        }
+
+        private void OpenConfigsForm()
         {
             using (var frmConfigs = this._scope.Resolve<FrmConfigs>())
             {
@@ -232,6 +236,39 @@ namespace OpenOSD
                 return parsedStyle;
             }
             return defaultStyle;
+        }
+
+        private void BtnSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.OpenConfigsForm();
+        }
+
+        private void BtnExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FrmSensors_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.NiMain.Visible = true;
+                this.Hide();
+            }
+
+        }
+
+        private void BtnMinimizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void NiMain_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+            this.Activate();
+            this.NiMain.Visible = false;
         }
     }
 }

@@ -75,12 +75,20 @@
             this.BtnSettings = new System.Windows.Forms.PictureBox();
             this.TtDash = new System.Windows.Forms.ToolTip(this.components);
             this.TxtMoboName = new System.Windows.Forms.TextBox();
+            this.NiMain = new System.Windows.Forms.NotifyIcon(this.components);
+            this.CtxTray = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.BtnSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CtxMain = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.BtnMinimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSettings)).BeginInit();
+            this.CtxTray.SuspendLayout();
+            this.CtxMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -602,11 +610,55 @@
             this.TxtMoboName.TabIndex = 16;
             this.TxtMoboName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // NiMain
+            // 
+            this.NiMain.ContextMenuStrip = this.CtxTray;
+            this.NiMain.Text = "notifyIcon1";
+            this.NiMain.Visible = true;
+            this.NiMain.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NiMain_MouseDoubleClick);
+            // 
+            // CtxTray
+            // 
+            this.CtxTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BtnSettingsToolStripMenuItem,
+            this.BtnExitToolStripMenuItem});
+            this.CtxTray.Name = "CtxTray";
+            this.CtxTray.Size = new System.Drawing.Size(152, 48);
+            // 
+            // BtnSettingsToolStripMenuItem
+            // 
+            this.BtnSettingsToolStripMenuItem.Name = "BtnSettingsToolStripMenuItem";
+            this.BtnSettingsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.BtnSettingsToolStripMenuItem.Text = "Configurações";
+            this.BtnSettingsToolStripMenuItem.Click += new System.EventHandler(this.BtnSettingsToolStripMenuItem_Click);
+            // 
+            // BtnExitToolStripMenuItem
+            // 
+            this.BtnExitToolStripMenuItem.Name = "BtnExitToolStripMenuItem";
+            this.BtnExitToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.BtnExitToolStripMenuItem.Text = "Sair";
+            this.BtnExitToolStripMenuItem.Click += new System.EventHandler(this.BtnExitToolStripMenuItem_Click);
+            // 
+            // CtxMain
+            // 
+            this.CtxMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BtnMinimizeToolStripMenuItem});
+            this.CtxMain.Name = "CtxMain";
+            this.CtxMain.Size = new System.Drawing.Size(128, 26);
+            // 
+            // BtnMinimizeToolStripMenuItem
+            // 
+            this.BtnMinimizeToolStripMenuItem.Name = "BtnMinimizeToolStripMenuItem";
+            this.BtnMinimizeToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.BtnMinimizeToolStripMenuItem.Text = "Minimizar";
+            this.BtnMinimizeToolStripMenuItem.Click += new System.EventHandler(this.BtnMinimizeToolStripMenuItem_Click);
+            // 
             // FrmSensors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 493);
+            this.ContextMenuStrip = this.CtxMain;
             this.ControlBox = false;
             this.Controls.Add(this.TxtMoboName);
             this.Controls.Add(this.BtnSettings);
@@ -617,6 +669,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.DisplayHeader = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmSensors";
@@ -626,6 +679,7 @@
             this.Text = "OpenOSD";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.FrmSensors_Load);
+            this.Resize += new System.EventHandler(this.FrmSensors_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -636,6 +690,8 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnSettings)).EndInit();
+            this.CtxTray.ResumeLayout(false);
+            this.CtxMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -687,6 +743,12 @@
         private System.Windows.Forms.TextBox TxtCpuName;
         private System.Windows.Forms.TextBox TxtMoboName;
         private System.Windows.Forms.TextBox TxtGpuName;
+        private System.Windows.Forms.NotifyIcon NiMain;
+        private System.Windows.Forms.ContextMenuStrip CtxTray;
+        private System.Windows.Forms.ToolStripMenuItem BtnSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BtnExitToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip CtxMain;
+        private System.Windows.Forms.ToolStripMenuItem BtnMinimizeToolStripMenuItem;
     }
 }
 
