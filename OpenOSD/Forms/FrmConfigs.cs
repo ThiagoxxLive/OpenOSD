@@ -39,6 +39,10 @@ namespace OpenOSD.Forms
             this.GetValueFromEnum(this.CbGpuTargetTemp, Properties.Settings.Default.GpuTargetTempColor);
             this.GetValueFromEnum(this.CbGpuTargetClock, Properties.Settings.Default.GpuTargetTempColor);
 
+            //General
+            this.ChInitializeWithWindows.Checked = StartupManager.IsStartupEnabled("OpenOSD");
+            this.ChInitializeMinimized.Checked = Properties.Settings.Default.InitializeMinimized;
+
         }
 
         private void LoadLogoPath()
@@ -53,8 +57,10 @@ namespace OpenOSD.Forms
 
         private void BtnSelectLogo_Click(object sender, EventArgs e)
         {
-            var ofd = new OpenFileDialog();            
-            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+            var ofd = new OpenFileDialog
+            {
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
+            };
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -81,6 +87,9 @@ namespace OpenOSD.Forms
                 Properties.Settings.Default.GpuTargetClock = this.SlGpuTargetClock.Value;
                 Properties.Settings.Default.GpuTargetClockColor = this.CbGpuTargetClock.SelectedIndex.ToString();
                 Properties.Settings.Default.GpuTargetTempColor = this.CbGpuTargetTemp.SelectedIndex.ToString();
+
+                StartupManager.SetStartup("OpenOSD", this.ChInitializeWithWindows.Checked);
+                StartupManager.SetStartupTask("OpenOSD", this.ChInitializeWithWindows.Checked);
 
                 Properties.Settings.Default.Save();
 
@@ -166,6 +175,16 @@ namespace OpenOSD.Forms
         private void SlGpuTargetClock_ValueChanged(object sender, EventArgs e)
         {
             this.LblGpuTargetClockValue.Text = SlGpuTargetClock.Value.ToString();
+        }
+
+        private void ChInitializeWithWindows_CheckStateChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.InitializeWithWindows = this.ChInitializeWithWindows.Checked;
+        }
+
+        private void ChInitializeMinimized_CheckStateChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.InitializeMinimized = this.ChInitializeMinimized.Checked;
         }
     }
 }

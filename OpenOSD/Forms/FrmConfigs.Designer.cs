@@ -60,14 +60,18 @@
             this.SlGpuTargetTemp = new Bunifu.Framework.UI.BunifuSlider();
             this.CbGpuTargetTemp = new MetroFramework.Controls.MetroComboBox();
             this.CbGpuTargetClock = new MetroFramework.Controls.MetroComboBox();
+            this.GpGeneral = new System.Windows.Forms.GroupBox();
+            this.ChInitializeWithWindows = new MetroFramework.Controls.MetroCheckBox();
+            this.ChInitializeMinimized = new MetroFramework.Controls.MetroCheckBox();
             this.GpCpu.SuspendLayout();
             this.GpGpu.SuspendLayout();
+            this.GpGeneral.SuspendLayout();
             this.SuspendLayout();
             // 
             // LblLogo
             // 
             this.LblLogo.AutoSize = true;
-            this.LblLogo.Location = new System.Drawing.Point(23, 291);
+            this.LblLogo.Location = new System.Drawing.Point(11, 20);
             this.LblLogo.Name = "LblLogo";
             this.LblLogo.Size = new System.Drawing.Size(123, 19);
             this.LblLogo.Style = MetroFramework.MetroColorStyle.Black;
@@ -77,16 +81,16 @@
             // 
             // TxtLogo
             // 
-            this.TxtLogo.Location = new System.Drawing.Point(23, 313);
+            this.TxtLogo.Location = new System.Drawing.Point(11, 42);
             this.TxtLogo.Name = "TxtLogo";
             this.TxtLogo.ReadOnly = true;
-            this.TxtLogo.Size = new System.Drawing.Size(420, 23);
+            this.TxtLogo.Size = new System.Drawing.Size(286, 23);
             this.TxtLogo.TabIndex = 1;
             this.TxtLogo.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // BtnSelectLogo
             // 
-            this.BtnSelectLogo.Location = new System.Drawing.Point(449, 313);
+            this.BtnSelectLogo.Location = new System.Drawing.Point(303, 42);
             this.BtnSelectLogo.Name = "BtnSelectLogo";
             this.BtnSelectLogo.Size = new System.Drawing.Size(108, 23);
             this.BtnSelectLogo.TabIndex = 2;
@@ -96,7 +100,7 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(23, 342);
+            this.BtnSave.Location = new System.Drawing.Point(19, 432);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(108, 23);
             this.BtnSave.TabIndex = 3;
@@ -106,7 +110,7 @@
             // 
             // BtnQuit
             // 
-            this.BtnQuit.Location = new System.Drawing.Point(140, 342);
+            this.BtnQuit.Location = new System.Drawing.Point(133, 432);
             this.BtnQuit.Name = "BtnQuit";
             this.BtnQuit.Size = new System.Drawing.Size(108, 23);
             this.BtnQuit.TabIndex = 4;
@@ -449,18 +453,62 @@
             this.CbGpuTargetClock.TabIndex = 10;
             this.CbGpuTargetClock.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // GpGeneral
+            // 
+            this.GpGeneral.Controls.Add(this.ChInitializeMinimized);
+            this.GpGeneral.Controls.Add(this.ChInitializeWithWindows);
+            this.GpGeneral.Controls.Add(this.TxtLogo);
+            this.GpGeneral.Controls.Add(this.LblLogo);
+            this.GpGeneral.Controls.Add(this.BtnSelectLogo);
+            this.GpGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GpGeneral.ForeColor = System.Drawing.Color.Gray;
+            this.GpGeneral.Location = new System.Drawing.Point(23, 294);
+            this.GpGeneral.Name = "GpGeneral";
+            this.GpGeneral.Size = new System.Drawing.Size(420, 132);
+            this.GpGeneral.TabIndex = 9;
+            this.GpGeneral.TabStop = false;
+            this.GpGeneral.Text = "Geral";
+            // 
+            // ChInitializeWithWindows
+            // 
+            this.ChInitializeWithWindows.AutoSize = true;
+            this.ChInitializeWithWindows.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChInitializeWithWindows.Location = new System.Drawing.Point(11, 71);
+            this.ChInitializeWithWindows.Name = "ChInitializeWithWindows";
+            this.ChInitializeWithWindows.Size = new System.Drawing.Size(161, 15);
+            this.ChInitializeWithWindows.Style = MetroFramework.MetroColorStyle.Silver;
+            this.ChInitializeWithWindows.TabIndex = 3;
+            this.ChInitializeWithWindows.Text = "Inicializar com o Windows";
+            this.ChInitializeWithWindows.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ChInitializeWithWindows.UseStyleColors = true;
+            this.ChInitializeWithWindows.UseVisualStyleBackColor = true;
+            this.ChInitializeWithWindows.CheckStateChanged += new System.EventHandler(this.ChInitializeWithWindows_CheckStateChanged);
+            // 
+            // ChInitializeMinimized
+            // 
+            this.ChInitializeMinimized.AutoSize = true;
+            this.ChInitializeMinimized.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChInitializeMinimized.Location = new System.Drawing.Point(11, 92);
+            this.ChInitializeMinimized.Name = "ChInitializeMinimized";
+            this.ChInitializeMinimized.Size = new System.Drawing.Size(138, 15);
+            this.ChInitializeMinimized.Style = MetroFramework.MetroColorStyle.Silver;
+            this.ChInitializeMinimized.TabIndex = 4;
+            this.ChInitializeMinimized.Text = "Inicializar Minimizado";
+            this.ChInitializeMinimized.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ChInitializeMinimized.UseStyleColors = true;
+            this.ChInitializeMinimized.UseVisualStyleBackColor = true;
+            this.ChInitializeMinimized.CheckStateChanged += new System.EventHandler(this.ChInitializeMinimized_CheckStateChanged);
+            // 
             // FrmConfigs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 388);
+            this.ClientSize = new System.Drawing.Size(886, 508);
+            this.Controls.Add(this.GpGeneral);
             this.Controls.Add(this.GpGpu);
             this.Controls.Add(this.GpCpu);
             this.Controls.Add(this.BtnQuit);
             this.Controls.Add(this.BtnSave);
-            this.Controls.Add(this.BtnSelectLogo);
-            this.Controls.Add(this.TxtLogo);
-            this.Controls.Add(this.LblLogo);
             this.Name = "FrmConfigs";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Black;
@@ -471,8 +519,9 @@
             this.GpCpu.PerformLayout();
             this.GpGpu.ResumeLayout(false);
             this.GpGpu.PerformLayout();
+            this.GpGeneral.ResumeLayout(false);
+            this.GpGeneral.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -509,5 +558,8 @@
         private MetroFramework.Controls.MetroComboBox CbGpuTargetClock;
         private MetroFramework.Controls.MetroLabel LblGpuTargetClockColor;
         private MetroFramework.Controls.MetroLabel LblGpuTargetTemp;
+        private System.Windows.Forms.GroupBox GpGeneral;
+        private MetroFramework.Controls.MetroCheckBox ChInitializeWithWindows;
+        private MetroFramework.Controls.MetroCheckBox ChInitializeMinimized;
     }
 }

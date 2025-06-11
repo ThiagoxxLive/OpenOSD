@@ -142,5 +142,29 @@ namespace OpenOSD.Properties {
                 this["GpuTargetTempColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool InitializeWithWindows {
+            get {
+                return ((bool)(this["InitializeWithWindows"]));
+            }
+            set {
+                this["InitializeWithWindows"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool InitializeMinimized {
+            get {
+                return ((bool)(this["InitializeMinimized"]));
+            }
+            set {
+                this["InitializeMinimized"] = value;
+            }
+        }
     }
 }

@@ -57,6 +57,18 @@ namespace OpenOSD
             this.NiMain.Text = "OpenOSD";
             this.NiMain.Icon = this.Icon;
             this.NiMain.Visible = false;
+            this.CheckMinimizedInit();            
+
+        }
+
+        private void CheckMinimizedInit()
+        {
+            if (Properties.Settings.Default.InitializeMinimized == true)
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.ShowInTaskbar = false;
+                this.Hide();
+            }
         }
 
         private void LoadLogo()
