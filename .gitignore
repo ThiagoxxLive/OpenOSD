@@ -1,2 +1,4 @@
 /packages/
 /.vs/
+/OpenOSD/bin/
+/OpenOSD/.vs
