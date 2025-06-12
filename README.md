@@ -19,4 +19,4 @@ Just follow these steps:
 
 # Finally
 
-Feel freek to contribute! :)
+Feel free to contribute! :)
